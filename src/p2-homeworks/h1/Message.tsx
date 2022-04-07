@@ -15,6 +15,7 @@ export const Message = ({avatar, name, message, time}: MessageType) => {
             <div className={classes.avatar}>
                 <img src={`${avatar}`} alt="avatar"/>
             </div>
+            <div className={classes.tongue}></div>
             <div className={classes.inner}>
                 <div className={classes.inner__name}>{name}</div>
                 <div className={classes.inner__wrapper}>

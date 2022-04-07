@@ -1,45 +1,72 @@
 .message {
     padding: 10px;
-    width: 400px;
-    background-color: greenyellow;
+    width: 300px;
+    background-color: chartreuse;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: relative;
+}
+
+.avatar {
+    width: 45px;
+    padding: 20px 10px 0 5px;
+    border-bottom-right-radius: 15px;
+    background-color: chartreuse;
+    z-index: 2;
+    display: flex;
     align-items: flex-end;
 }
 
 .avatar img {
-    width: 50px;
+    width: 100%;
+    height: 100%;
     border-radius: 100%;
-    margin-right: 10px;
+}
+
+.tongue {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    background-color: #114011;
+    left: 25px;
+    z-index: 1;
 }
 
 .inner {
-    padding: 10px 10px 10px 20px;
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
+    padding: 5px 10px 10px 10px;
+    border-radius: 5px;
+    width: 220px;
     display: flex;
     background-color: #114011;
     flex-direction: column;
+    z-index: 2;
 }
 
 .inner__wrapper {
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
 }
 
 .inner__name {
     font-size: 15px;
     color: #dc4ebe;
-    margin-bottom: 5px;
+    font-weight: bold;
+    margin-bottom: 0px;
 }
 
 .inner__text {
+    /*word-break: break-all;*/
+    word-wrap: break-word;
+    min-width: 150px;
+    max-width: 300px;
     font-size: 15px;
     color: white;
 }
 
 .inner__time {
+    display: flex;
+    justify-content: flex-end;
     color: #706f6f;
 }

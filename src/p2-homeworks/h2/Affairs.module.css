@@ -1,3 +1,36 @@
-.someClass {
-
+.buttonFilter {
+    color: white;
+    background-color: green;
+    margin-right: 10px;
 }
+
+.buttonClose {
+    color: white;
+    background-color: green;
+    margin-bottom: 10px;
+}
+
+.affair {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.affairName {
+    color: green;
+    width: 80px;
+}
+
+.affairPriorityHigh {
+    color: red;
+}
+
+.affairPriorityLow {
+    color: green;
+}
+
+.affairPriorityMiddle {
+    color: chocolate;
+}
+
+
