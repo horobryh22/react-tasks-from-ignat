@@ -1,7 +1,29 @@
-.someClass {
+.errorText {
+    margin: 1px;
+    display: block;
+    color: red;
+    font-size: 12px;
+}
 
+.input {
+    background-color: #8fdc8f;
+}
+
+.button {
+    background-color: #4dad4d;
+    margin-left: 10px;
 }
 
 .error {
-    border: 1px solid red;
+    border: 2px solid black;
+    background-color: #f14848;
 }
+
+.count {
+    display: inline-block;
+    margin-left: 10px;
+    color: green;
+    font-size: 15px;
+    font-weight: bold;
+}
+

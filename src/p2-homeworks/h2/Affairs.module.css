@@ -21,15 +21,15 @@
     width: 80px;
 }
 
-.affairPriorityHigh {
+.high {
     color: red;
 }
 
-.affairPriorityLow {
+.low {
     color: green;
 }
 
-.affairPriorityMiddle {
+.middle {
     color: chocolate;
 }
 

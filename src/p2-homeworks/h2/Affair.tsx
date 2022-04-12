@@ -7,12 +7,13 @@ type AffairPropsType = {
     deleteAffairCallback: (_id: number) => void
 }
 
-function Affair({affair, deleteAffairCallback}: AffairPropsType) {
+export const Affair: React.FC<AffairPropsType> = ({affair, deleteAffairCallback}) => {
+
     const deleteCallback = () => {
         deleteAffairCallback(affair._id);
     }
 
-    const priorityClassName = (affair.priority === 'high') ? classes.affairPriorityHigh : (affair.priority === 'middle') ? classes.affairPriorityMiddle : classes.affairPriorityLow;
+    const priorityClassName = classes[affair.priority];
 
     return (
         <div className={classes.affair}>
@@ -24,4 +25,3 @@ function Affair({affair, deleteAffairCallback}: AffairPropsType) {
     )
 }
 
-export default Affair

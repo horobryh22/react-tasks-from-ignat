@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Affairs from './Affairs';
+import {Affairs} from './Affairs';
 
 
 export type AffairPriorityType = 'high' | 'low' | 'middle';
