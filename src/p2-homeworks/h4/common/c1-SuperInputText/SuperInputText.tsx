@@ -1,16 +1,17 @@
-import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent} from 'react'
-import s from './SuperInputText.module.css'
+import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, FocusEvent, KeyboardEvent} from 'react'
+import classes from './SuperInputText.module.css'
 
-// тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
 // здесь мы говорим что у нашего инпута будут такие же пропсы как у обычного инпута
 // (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
 type SuperInputTextPropsType = DefaultInputPropsType & { // и + ещё пропсы которых нет в стандартном инпуте
     onChangeText?: (value: string) => void
+    onChangeError?: (error: string | null) => void
     onEnter?: () => void
-    error?: string
-    spanClassName?: string
+    error?: string | null
+    divClassName?: string
+    placeholderName?: string
 }
 
 const SuperInputText: React.FC<SuperInputTextPropsType> = (
@@ -19,39 +20,48 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         onChange, onChangeText,
         onKeyPress, onEnter,
         error,
-        className, spanClassName,
-
+        className, divClassName,
+        onChangeError,
+        placeholderName,
         ...restProps// все остальные пропсы попадут в объект restProps
     }
 ) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange // если есть пропс onChange
-        && onChange(e) // то передать ему е (поскольку onChange не обязателен)
+    const finalDivClassName = `${classes.errorMessage} ${divClassName ? divClassName : ''}`;
+    const finalInputClassName = `${classes.superInput} ${error ? classes.errorInput : ''} ${className ? className : ''}`;
 
-        onChangeText && onChangeText(e.currentTarget.value)
+    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
+        onChange && onChange(e);
+
+        onChangeText && onChangeText(e.currentTarget.value);
     }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
+
+        onChangeError && error && onChangeError(null); // обнуляем нашу ошибку если она у нас была
+
         onKeyPress && onKeyPress(e);
 
-        onEnter // если есть пропс onEnter
-        && e.key === 'Enter' // и если нажата кнопка Enter
-        && onEnter() // то вызвать его
+        onEnter && e.key === 'Enter' && onEnter();
     }
 
-    const finalSpanClassName = `${s.error} ${spanClassName ? spanClassName : ''}`
-    const finalInputClassName = `${s.errorInput} ${className}` // need to fix with (?:) and s.superInput
+    const onBlurInputHandler = (e: FocusEvent<HTMLInputElement>) => { // использую здесь эту функцию, чтобы при потере фокуса,
+        if (e.currentTarget.value !== '') e.currentTarget.focus();         // placeholder не возвращался обратно в инпут, если в нем не
+    }                                                                      // пустой value
 
     return (
         <>
-            <input
-                type={'text'}
-                onChange={onChangeCallback}
-                onKeyPress={onKeyPressCallback}
-                className={finalInputClassName}
+            <label className={classes.label}>
+                <input
+                    type={'text'}
+                    onChange={onChangeCallback}
+                    onKeyPress={onKeyPressCallback}
+                    className={finalInputClassName}
+                    onBlur={onBlurInputHandler}
 
-                {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
-            />
-            {error && <span className={finalSpanClassName}>{error}</span>}
+                    {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
+                />
+                <span className={classes.placeholder}>{placeholderName}</span>
+            </label>
+            {error && <div className={finalDivClassName}>{error}</div>}
         </>
     )
 }

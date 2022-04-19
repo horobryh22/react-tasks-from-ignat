@@ -1,8 +1,8 @@
 .errorText {
     margin: 1px;
-    display: block;
     color: red;
     font-size: 12px;
+    height: 20px;
 }
 
 .input {

@@ -1,40 +1,44 @@
-import React, {ChangeEvent, useState} from 'react'
-import SuperInputText from './common/c1-SuperInputText/SuperInputText'
-import s from './HW4.module.css'
-import SuperButton from './common/c2-SuperButton/SuperButton'
-import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
+import React, {ChangeEvent, useState} from 'react';
+import SuperInputText from './common/c1-SuperInputText/SuperInputText';
+import classes from './HW4.module.css';
+import SuperButton from './common/c2-SuperButton/SuperButton';
+import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox';
 
 function HW4() {
-    const [text, setText] = useState<string>('')
-    const error = text ? '' : 'error'
+    const [text, setText] = useState<string>('');
+    const [error, setError] = useState<null | string>(null);
 
     const showAlert = () => {
-        if (error) {
-            alert('введите текст...')
+        if (text.trim()) {
+            alert(text);
         } else {
-            alert(text) // если нет ошибки показать текст
+            setError('Your password is not correct');
+            alert('Your password is not correct');
         }
+        setText('');
     }
 
-    const [checked, setChecked] = useState<boolean>(false)
-    const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
+    const [checked, setChecked] = useState<boolean>(false);
+    const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked);
 
     return (
         <div>
             <hr/>
-            homeworks 4
+            <h3>Fourth Homework:</h3>
 
-            <div className={s.column}>
+            <div className={classes.column}>
                 <SuperInputText
                     value={text}
                     onChangeText={setText}
+                    onChangeError={setError}
                     onEnter={showAlert}
                     error={error}
-                    // spanClassName={s.testSpanError}
+                    placeholderName={'Enter your password'}
+                    divClassName={classes.testSpanError} // это работает
                 />
 
                 <SuperInputText
-                    className={s.blue} // проверьте, рабоет ли смешивание классов
+                    className={classes.green} // это работает также
                 />
 
                 {/*----------------------------------------------------*/}
@@ -66,15 +70,8 @@ function HW4() {
                 {/*// onChange тоже должен работать*/}
                 <SuperCheckbox checked={checked} onChange={testOnChange}/>
             </div>
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeSuperInputText/>*/}
-            {/*<AlternativeSuperButton/>*/}
-            {/*<AlternativeSuperCheckbox/>*/}
-            <hr/>
         </div>
     )
 }
 
-export default HW4
+export default HW4;
