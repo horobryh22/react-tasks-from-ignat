@@ -18,7 +18,7 @@ function HW4() {
         setText('');
     }
 
-    const [checked, setChecked] = useState<boolean>(false);
+    const [checked, setChecked] = useState<boolean>(true);
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked);
 
     return (
@@ -48,10 +48,10 @@ function HW4() {
                 </SuperButton>
 
                 <SuperButton
-                    red // пропсу с булевым значением не обязательно указывать true
+                    red
                     onClick={showAlert}
                 >
-                    delete {/*// название кнопки попадёт в children*/}
+                    delete {/*название кнопки попадет в children*/}
                 </SuperButton>
 
                 <SuperButton disabled>
@@ -64,11 +64,12 @@ function HW4() {
                     checked={checked}
                     onChangeChecked={setChecked}
                 >
-                    some text {/*// этот текст попадёт в children*/}
+                    Completed
                 </SuperCheckbox>
 
-                {/*// onChange тоже должен работать*/}
-                <SuperCheckbox checked={checked} onChange={testOnChange}/>
+                <SuperCheckbox checked={checked} onChange={testOnChange} className={classes.spanClass}>
+                    Active
+                </SuperCheckbox>
             </div>
         </div>
     )

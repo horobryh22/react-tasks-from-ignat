@@ -26,7 +26,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         ...restProps// все остальные пропсы попадут в объект restProps
     }
 ) => {
-    const finalDivClassName = `${classes.errorMessage} ${divClassName ? divClassName : ''}`;
+    const finalDivClassName = `${classes.errorBox} ${error ? classes.errorMessage : ''} ${divClassName ? divClassName : ''}`;
     const finalInputClassName = `${classes.superInput} ${error ? classes.errorInput : ''} ${className ? className : ''}`;
 
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
@@ -61,7 +61,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
                 />
                 <span className={classes.placeholder}>{placeholderName}</span>
             </label>
-            {error && <div className={finalDivClassName}>{error}</div>}
+            <div className={finalDivClassName}>{error}</div>
         </>
     )
 }

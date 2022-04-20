@@ -2,6 +2,11 @@
     border-bottom: 5px solid green;
 }
 
+.spanClass {
+    color: green;
+    font-weight: bold;
+}
+
 .column {
     display: flex;
     flex-direction: column;

@@ -43,15 +43,19 @@
 }
 
 .errorInput {
-    border: 1px solid #d30909;
+    outline: none;
+    border: none;
+    box-shadow: inset 0 0 0 1px #d30909;
 }
 
 .errorMessage {
-    display: block;
+    background: #d30909;
+    font-size: 13px;
+}
+
+.errorBox {
+    height: 24px;
+    padding: 2px 8px;
     width: 250px;
     align-items: center;
-    padding: 2px 8px;
-    font-size: 13px;
-    background: #d30909;
-    height: 24px;
 }
