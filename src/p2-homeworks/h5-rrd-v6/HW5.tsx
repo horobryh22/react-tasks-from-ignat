@@ -1,18 +1,21 @@
 import React from 'react'
 import Header from './Header'
 import Pages from './Pages'
+import {BrowserRouter, HashRouter} from 'react-router-dom';
+import classes from '../../p1-main/m1-ui/u1-app/App.module.css';
 
 function HW5() {
     return (
         <div>
-            {/*в gh-pages лучше работает HashRouter*/}
-            {/*<HashRouter>*/}
+            <BrowserRouter>
 
-            <Header/>
+                <Header/>
 
-            <Pages/>
+                <h1 className={classes.title}>React homeworks:</h1>
 
-            {/*</HashRouter>*/}
+                <Pages/>
+
+            </BrowserRouter>
         </div>
     )
 }
