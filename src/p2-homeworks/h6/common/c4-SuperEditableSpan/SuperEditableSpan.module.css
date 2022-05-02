@@ -1,0 +1,13 @@
+.span {
+    display: inline-block;
+    padding: 8px;
+    height: 45px;
+    width: 250px;
+    word-wrap: break-word;
+}
+
+.img {
+    margin-right: 10px;
+    width: 20px;
+    transform: scaleX(-1);
+}

@@ -12,6 +12,7 @@ type SuperInputTextPropsType = Omit<DefaultInputPropsType, 'type'> & { // и + �
     error?: string | null
     divClassName?: string
     placeholderName?: string
+    errorBox: boolean
 }
 
 const SuperInputText: React.FC<SuperInputTextPropsType> = (
@@ -23,6 +24,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         className, divClassName,
         onChangeError,
         placeholderName,
+        errorBox,
         ...restProps// все остальные пропсы попадут в объект restProps
     }
 ) => {
@@ -61,7 +63,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
                 />
                 <span className={classes.placeholder}>{placeholderName}</span>
             </label>
-            <div className={finalDivClassName}>{error}</div>
+            {errorBox ? <div className={finalDivClassName}>{error}</div> : <></>}
         </>
     )
 }

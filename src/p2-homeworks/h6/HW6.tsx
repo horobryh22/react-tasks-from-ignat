@@ -4,21 +4,23 @@ import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 import {restoreState, saveState} from './localStorage/localStorage'
 
 function HW6() {
-    const [value, setValue] = useState<string>('')
+
+    const startValue = restoreState<string>('editable-span-value', '');
+
+    const [value, setValue] = useState<string>(startValue);
 
     const save = () => {
         saveState<string>('editable-span-value', value)
     }
     const restore = () => {
-        // setValue()
+        const state = restoreState<string>('editable-span-value', '')
+        setValue(state)
     }
 
     return (
         <div>
             <hr/>
-            homeworks 6
-
-            {/*should work (должно работать)*/}
+            <h3>Sixth Homework:</h3>
             <div>
                 <SuperEditableSpan
                     value={value}
@@ -28,11 +30,6 @@ function HW6() {
             </div>
             <SuperButton onClick={save}>save</SuperButton>
             <SuperButton onClick={restore}>restore</SuperButton>
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeSuperEditableSpan/>*/}
-            <hr/>
         </div>
     )
 }

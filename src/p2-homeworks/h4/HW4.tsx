@@ -33,12 +33,14 @@ function HW4() {
                     onChangeError={setError}
                     onEnter={showAlert}
                     error={error}
+                    errorBox
                     placeholderName={'Enter your password'}
                     divClassName={classes.testSpanError} // это работает
                 />
 
                 <SuperInputText
                     className={classes.green} // это работает также
+                    errorBox
                 />
 
                 {/*----------------------------------------------------*/}
