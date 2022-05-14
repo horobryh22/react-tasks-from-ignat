@@ -5,14 +5,12 @@ import SuperRadio from './common/c6-SuperRadio/SuperRadio'
 const arr = ['x', 'y', 'z']
 
 function HW7() {
-    const [value, onChangeOption] = useState(arr[1])
+    const [value, onChangeOption] = useState(arr[0]);
 
     return (
         <div>
             <hr/>
-            homeworks 7
-
-            {/*should work (должно работать)*/}
+            <h3>Seventh Homework:</h3>
             <div>
                 <SuperSelect
                     options={arr}
@@ -28,12 +26,6 @@ function HW7() {
                     onChangeOption={onChangeOption}
                 />
             </div>
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeSuperSelect/>*/}
-            {/*<AlternativeSuperRadio/>*/}
-            <hr/>
         </div>
     )
 }
