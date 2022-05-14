@@ -1,4 +1,3 @@
-
 :root {
     --primary: #4d9446;
     --seconday: #6e6363;
@@ -14,7 +13,7 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-.label:hover, label:focus-within {
+.label:hover, .label:focus-within {
     background: rgba(126, 126, 136, 0.2)
 }
 
