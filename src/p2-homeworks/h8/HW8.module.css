@@ -1,0 +1,16 @@
+.table {
+    padding: 5px;
+    max-width: 460px;
+    min-height: 165px;
+    border: 2px solid green;
+    background-color: rgba(2, 58, 2, 0.2);
+}
+
+.string {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonsBox {
+    display: flex;
+}
