@@ -1,0 +1,15 @@
+.container {
+    width: 280px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(1, 1, 0, .1);
+}
+
+.preloaderContainer {
+    width: 40px;
+    height: 40px;
+    background-image: url('preloader.gif');
+    background-size: cover;
+}

@@ -1,14 +1,20 @@
-const initState = {
+import {createSlice} from '@reduxjs/toolkit';
 
+type InitialStateType = typeof initialState;
+
+const initialState = {
+    isLoading: false
 }
 
-export const loadingReducer = (state = initState, action: any): any => { // fix any
-    switch (action.type) {
-        case '': {
-            return state
+const loadingSlice = createSlice({
+    name: 'loading',
+    initialState,
+    reducers: {
+        changeLoadingStatus: (state: InitialStateType) => {
+            state.isLoading = !state.isLoading;
         }
-        default: return state
     }
-}
+});
 
-export const loadingAC = (): any => {} // fix any
+export default loadingSlice.reducer;
+export const {changeLoadingStatus} = loadingSlice.actions;

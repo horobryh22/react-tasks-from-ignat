@@ -1,38 +1,33 @@
 import React from 'react'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import {useAppDispatch, useTypedSelector} from './bll/store';
+import {changeLoadingStatus} from './bll/loadingReducer';
+import classes from './HW10.module.css';
 
 function HW10() {
-    // useSelector, useDispatch
-    const loading = false
+
+    const dispatch = useAppDispatch();
+    const loading = useTypedSelector(state => state.loading.isLoading);
 
     const setLoading = () => {
-        // dispatch
-        // setTimeout
-        console.log('loading...')
+        dispatch(changeLoadingStatus());
+        setTimeout(() => {
+            dispatch(changeLoadingStatus());
+        }, 3000);
     };
 
     return (
         <div>
             <hr/>
-            homeworks 10
+            <h3>Tenth Homework:</h3>
+            <div className={classes.container}>
+                {loading
+                    ? <div className={classes.preloaderContainer}></div>
+                    : <SuperButton onClick={setLoading}>loading...</SuperButton>}
+            </div>
 
-            {/*should work (должно работать)*/}
-            {loading
-                ? (
-                    <div>крутилка...</div>
-                ) : (
-                    <div>
-                        <SuperButton onClick={setLoading}>set loading...</SuperButton>
-                    </div>
-                )
-            }
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<Alternative/>*/}
-            <hr/>
         </div>
     )
 }
 
-export default HW10
+export default HW10;
