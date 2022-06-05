@@ -16,7 +16,7 @@ function HW11() {
             </div>
             <br/>
             <div>
-                <SuperDoubleRange min={value1} max={value2} value={values} onChangeRange={setValues}/>
+                <SuperDoubleRange min={0} max={100} value={values} onChangeRange={setValues}/>
             </div>
         </div>
     )
