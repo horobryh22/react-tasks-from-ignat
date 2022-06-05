@@ -1,3 +1,28 @@
 .range {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    -webkit-appearance: none;
+    margin-right: 15px;
+    width: 200px;
+    height: 7px;
+    border-radius: 5px;
+    background: rgba(88, 140, 36, 0.22) linear-gradient(#588827, #588827) no-repeat;
+}
 
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #588827;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background .3s ease-in-out;
+}
+
+.output {
+    margin-right: 3px;
 }

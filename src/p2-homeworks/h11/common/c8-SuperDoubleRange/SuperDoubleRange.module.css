@@ -1,0 +1,12 @@
+.doubleRangeContainer {
+    display: flex;
+    align-items: center;
+}
+
+.leftOutput {
+    margin-right: 5px;
+}
+
+.rightOutput {
+    margin-left: 5px;
+}

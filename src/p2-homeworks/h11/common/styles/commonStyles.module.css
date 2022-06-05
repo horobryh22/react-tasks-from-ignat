@@ -1,0 +1,13 @@
+.output {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    background: rgba(90, 150, 33, 0.62);
+    padding: 5px 0;
+    border: 2px solid rgba(0, 0, 0, 0.26);
+    border-radius: 3px;
+    width: 50px;
+    color: #fff;
+    text-align: center;
+}
