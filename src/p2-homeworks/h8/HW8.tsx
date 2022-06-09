@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import {checkByAgeAC, homeWorkReducer, sortUpOrDownAC} from './bll/homeWorkReducer'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 import classes from './HW8.module.css';
+import themes from '../h12/HW12.module.css';
+import {useTypedSelector} from '../h10/bll/store';
 
 export type UserType = {
     _id: number
@@ -19,6 +21,8 @@ const initialPeople: Array<UserType> = [
 ]
 
 function HW8() {
+
+    const theme = useTypedSelector(state => state.theme.currentTheme);
     const [people, setPeople] = useState<Array<UserType>>(initialPeople)
 
     const finalPeople = people.map((p: UserType) => (
@@ -35,7 +39,7 @@ function HW8() {
     return (
         <div>
             <hr/>
-            <h3>Eighth Homework:</h3>
+            <h3 className={themes[theme + '-text']}>Eighth Homework:</h3>
 
             <div className={classes.table}>{finalPeople}</div>
 

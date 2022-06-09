@@ -9,7 +9,7 @@
 }
 
 .dark-text {
-    color: aliceblue;
+    color: #ad9dc0;
 }
 
 .red {
@@ -17,7 +17,7 @@
 }
 
 .red-text {
-    color: #e2eaea;
+    color: #1140e0;
 }
 
 .green {
@@ -25,7 +25,7 @@
 }
 
 .green-text {
-    color: darkslateblue;
+    color: #150202;
 }
 
 .yellow {
@@ -33,5 +33,5 @@
 }
 
 .yellow-text {
-    color: rgb(21, 2, 2);
+    color: rgb(222, 15, 15);
 }
