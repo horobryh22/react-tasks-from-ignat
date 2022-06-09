@@ -1,3 +1,9 @@
+.main {
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+
 .dark {
     background: dimgrey;
 }
@@ -7,17 +13,25 @@
 }
 
 .red {
-    background: lightcoral;
+    background: #ce4a4a;
 }
 
 .red-text {
-    color: aqua;
+    color: #e2eaea;
 }
 
-.some {
-    background: lightgreen;
+.green {
+    background-color: #7dcb7d;
 }
 
-.some-text {
+.green-text {
     color: darkslateblue;
+}
+
+.yellow {
+    background: #d2ec5b;
+}
+
+.yellow-text {
+    color: rgb(21, 2, 2);
 }

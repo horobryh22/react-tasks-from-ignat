@@ -1,7 +1,7 @@
 import React from 'react'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 import {useAppDispatch, useTypedSelector} from './bll/store';
-import {changeLoadingStatus} from './bll/loadingReducer';
+import {changeLoadingStatus} from './bll/reducers/loadingReducer';
 import classes from './HW10.module.css';
 
 function HW10() {

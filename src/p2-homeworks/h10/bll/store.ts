@@ -1,4 +1,5 @@
-import loadingReducer from './loadingReducer'
+import loadingReducer from './reducers/loadingReducer'
+import themeReducer from './reducers/themeReducer';
 import {configureStore} from '@reduxjs/toolkit';
 import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
 
@@ -6,6 +7,7 @@ import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
 export const store = configureStore({
     reducer: {
         loading: loadingReducer,
+        theme: themeReducer
     }
 })
 
