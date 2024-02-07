@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react-tasks-from-ignat/static/css/main.bdec615a.css",
+    "main.css": "/react-tasks-from-ignat/static/css/main.525c838c.css",
     "main.js": "/react-tasks-from-ignat/static/js/main.e8500ae1.js",
     "static/media/preloader.gif": "/react-tasks-from-ignat/static/media/preloader.5d69c0c1ddd629a753ea.gif",
     "index.html": "/react-tasks-from-ignat/index.html",
-    "main.bdec615a.css.map": "/react-tasks-from-ignat/static/css/main.bdec615a.css.map",
+    "main.525c838c.css.map": "/react-tasks-from-ignat/static/css/main.525c838c.css.map",
     "main.e8500ae1.js.map": "/react-tasks-from-ignat/static/js/main.e8500ae1.js.map"
   },
   "entrypoints": [
-    "static/css/main.bdec615a.css",
+    "static/css/main.525c838c.css",
     "static/js/main.e8500ae1.js"
   ]
 }
